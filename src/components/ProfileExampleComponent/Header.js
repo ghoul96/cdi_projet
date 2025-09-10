@@ -7,9 +7,9 @@ function Header() {
     <header className={styles.header}>
       <h1>My Profile</h1>
       <nav className={styles.nav}>
-        <a href="#hero">Home</a>
-        <Link to="/profile">About</Link>
-        <a href="#contact">Contact</a>
+        <Link to="/">Home</Link>
+        <Link to="/profile">Profile</Link>
+        <Link to="/contact">Contact</Link>
       </nav>
     </header>
   );
