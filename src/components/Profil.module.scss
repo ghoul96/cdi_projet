@@ -1,53 +1,37 @@
 .profileContainer {
-  background: #fff;
+  background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
   border-radius: 16px;
-  padding: 2.5rem;
-  box-shadow: 0 8px 32px rgba(0,0,0,0.18);
+  padding: 2.5rem 2rem;
+  box-shadow: 0 4px 24px rgba(0,0,0,0.10);
   max-width: 420px;
-  margin: 0 auto;
-  position: fixed;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  z-index: 1001;
-  animation: fadeIn 0.3s ease;
-}
-@keyframes fadeIn {
-  from { opacity: 0; transform: translate(-50%, -60%); }
-  to { opacity: 1; transform: translate(-50%, -50%); }
-}
-.profileOverlay {
-  position: fixed;
-  top: 0; left: 0; right: 0; bottom: 0;
-  background: rgba(0,0,0,0.35);
-  z-index: 1000;
+  margin: 2.5rem auto;
+  font-family: 'Segoe UI', 'Roboto', Arial, sans-serif;
+  transition: box-shadow 0.2s;
+  color: #111;
 }
 .profileTitle {
-  color: #2563eb;
-  font-size: 2rem;
-  margin-bottom: 1rem;
+  color: #111;
+  font-size: 2.2rem;
+  font-weight: 600;
+  margin-bottom: 1.5rem;
+  letter-spacing: 0.5px;
 }
 .profileField {
-  margin-bottom: 0.75rem;
-  font-size: 1.1rem;
-}
-.profileLabel {
-  font-weight: bold;
-  margin-right: 0.5rem;
-}
-.profileCloseBtn {
-  position: absolute;
-  top: 1rem;
-  right: 1rem;
-  background: #eee;
-  border: none;
-  border-radius: 50%;
-  width: 2rem;
-  height: 2rem;
-  font-size: 1.2rem;
-  cursor: pointer;
+  margin-bottom: 1.1rem;
+  font-size: 1.13rem;
+  display: flex;
+  align-items: center;
+  background: rgba(255,255,255,0.7);
+  border-radius: 8px;
+  padding: 0.7rem 1rem;
+  box-shadow: 0 1px 4px rgba(0,0,0,0.04);
   transition: background 0.2s;
 }
-.profileCloseBtn:hover {
-  background: #eab308;
+.profileField:hover {
+  background: #e3eafc;
+}
+.profileLabel {
+  font-weight: 600;
+  margin-right: 0.7rem;
+  color: #111;
 }
