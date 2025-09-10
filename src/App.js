@@ -5,7 +5,7 @@ import logo from "./logo.svg";
 import "./App.css";
 
 // Import your Profile component
-import Profile from "./components/ProfileExampleComponent/Profile";
+import Profile_Xavier from "./components/profile/profile_Xavier/profile_Xavier.js";
 
 function App() {
   return (
@@ -31,7 +31,7 @@ function App() {
                 </a>
 
                 {/* ✅ New Button under Learn React */}
-                <Link to="/profile">
+                <Link to="/profile_Xavier">
                   <button className="App-button">Go to Profile</button>
                 </Link>
               </header>
@@ -40,7 +40,7 @@ function App() {
         />
 
         {/* Profile Page */}
-        <Route path="/profile" element={<Profile />} />
+        <Route path="/profile_Xavier" element={<Profile_Xavier />} />
       </Routes>
     </Router>
   );
