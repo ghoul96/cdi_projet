@@ -1,4 +1,4 @@
-import logo from './DysonLogo.svg';
+import logo from './dysonlogo.png';
 import './App.css';
 
 function App() {
