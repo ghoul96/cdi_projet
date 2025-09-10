@@ -8,6 +8,7 @@ import "./App.css";
 // Import your Profile component
 import Profile from "./components/ProfileExampleComponent/Profile";
 import Contact from "./components/ProfileExampleComponent/Contact";
+import Header from "./components/ProfileExampleComponent/Header";
 
 function App() {
   return (
@@ -18,6 +19,7 @@ function App() {
           path="/"
           element={
             <div className="App">
+              <Header />
               <header className="App-header">
                 <img src={logo} className="App-logo" alt="logo" />
                 <p>
