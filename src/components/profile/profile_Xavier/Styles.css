@@ -1,4 +1,3 @@
-/* Bloc principal et sections */
 .profile-main-block {
   width: 100%;
   max-width: 400px;
@@ -14,7 +13,7 @@
   border-bottom: none;
   margin-bottom: 0;
 }
-/* Bloc contact et téléphone */
+
 .contact-block {
   margin-bottom: 12px;
 }
