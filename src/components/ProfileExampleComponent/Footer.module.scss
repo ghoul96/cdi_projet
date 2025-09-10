@@ -1,6 +1,11 @@
+
 .footer {
-  padding: 1rem;
-  background: #282c34;
+  padding: 1.2rem 2rem;
+  background: linear-gradient(90deg, #1e293b 0%, #2563eb 100%);
   color: #fff;
   text-align: center;
+  font-size: 1rem;
+  border-radius: 16px 16px 0 0;
+  box-shadow: 0 -2px 12px rgba(0,0,0,0.08);
+  font-family: 'Segoe UI', 'Roboto', Arial, sans-serif;
 }

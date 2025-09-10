@@ -7,6 +7,7 @@ import "./App.css";
 
 // Import your Profile component
 import Profile from "./components/ProfileExampleComponent/Profile";
+import Contact from "./components/ProfileExampleComponent/Contact";
 
 function App() {
   return (
@@ -40,8 +41,10 @@ function App() {
           }
         />
 
-        {/* Profile Page */}
-        <Route path="/profile" element={<Profile />} />
+  {/* Profile Page */}
+  <Route path="/profile" element={<Profile />} />
+  {/* Contact Page */}
+  <Route path="/contact" element={<Contact />} />
       </Routes>
     </Router>
   );
