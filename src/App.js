@@ -1,6 +1,7 @@
 import logo from './logo.svg';
 import './App.css';
 import Header from './components/Header';
+import Profil from './components/profil';
 
 function App() {
   return (
@@ -9,8 +10,9 @@ function App() {
       <header className="App-header">
         <img src={logo} className="App-logo" alt="logo" />
         <p>
-          Grizz's React App
+          Best React App ever created!
         </p>
+        <Profil />
         <a
           className="App-link"
           href="https://reactjs.org"
