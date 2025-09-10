@@ -1,28 +1,49 @@
-import logo from './logo.svg';
-import './App.css';
-import Header from './components/Header';
-import Profil from './components/Profil';
+
+import React from "react";
+import { BrowserRouter as Router, Routes, Route, Link } from "react-router-dom";
+
+import logo from "./logo.svg";
+import "./App.css";
+
+// Import your Profile component
+import Profile from "./components/ProfileExampleComponent/Profile";
 
 function App() {
   return (
-    <div className="App">
-      <Header />
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Best React App ever created!
-        </p>
-        <Profil />
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <Router>
+      <Routes>
+        {/* Home Page (default CRA content + button) */}
+        <Route
+          path="/"
+          element={
+            <div className="App">
+              <header className="App-header">
+                <img src={logo} className="App-logo" alt="logo" />
+                <p>
+                  Edit <code>src/App.js</code> and save to reload.
+                </p>
+                <a
+                  className="App-link"
+                  href="https://reactjs.org"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  Learn React
+                </a>
+
+                {/* ✅ New Button under Learn React */}
+                <Link to="/profile">
+                  <button className="App-button">Go to Profile</button>
+                </Link>
+              </header>
+            </div>
+          }
+        />
+
+        {/* Profile Page */}
+        <Route path="/profile" element={<Profile />} />
+      </Routes>
+    </Router>
   );
 }
 
