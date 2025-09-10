@@ -1,0 +1,37 @@
+.profileContainer {
+  background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+  border-radius: 16px;
+  padding: 2.5rem 2rem;
+  box-shadow: 0 4px 24px rgba(0,0,0,0.10);
+  max-width: 420px;
+  margin: 2.5rem auto;
+  font-family: 'Segoe UI', 'Roboto', Arial, sans-serif;
+  transition: box-shadow 0.2s;
+  color: #111;
+}
+.profileTitle {
+  color: #111;
+  font-size: 2.2rem;
+  font-weight: 600;
+  margin-bottom: 1.5rem;
+  letter-spacing: 0.5px;
+}
+.profileField {
+  margin-bottom: 1.1rem;
+  font-size: 1.13rem;
+  display: flex;
+  align-items: center;
+  background: rgba(255,255,255,0.7);
+  border-radius: 8px;
+  padding: 0.7rem 1rem;
+  box-shadow: 0 1px 4px rgba(0,0,0,0.04);
+  transition: background 0.2s;
+}
+.profileField:hover {
+  background: #e3eafc;
+}
+.profileLabel {
+  font-weight: 600;
+  margin-right: 0.7rem;
+  color: #111;
+}
