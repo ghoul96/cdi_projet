@@ -1,5 +1,5 @@
 .contactCard {
-	background: linear-gradient(135deg, #181c22 0%, #232a36 100%);
+	background: rgba(40,44,52,0.85);
 	border-radius: 24px;
 	box-shadow: 0 8px 32px rgba(0,0,0,0.18);
 	color: #61dafb;
@@ -9,6 +9,12 @@
 	max-width: 400px;
 	margin: 2rem auto;
 	font-family: 'Segoe UI', 'Roboto', Arial, sans-serif;
+	transition: box-shadow 0.5s, background 0.5s;
+}
+
+.contactCard:hover {
+	transform: scale(1.03) translateY(-4px);
+	box-shadow: 0 12px 40px #61dafb33;
 }
 
 .contactTitle {
@@ -24,16 +30,19 @@
 	font-size: 1.1rem;
 	display: flex;
 	align-items: center;
-	background: rgba(40,44,52,0.7);
+	background: rgba(40,44,52,0.85);
 	border-radius: 12px;
 	padding: 0.6rem 1rem;
 	box-shadow: 0 1px 4px rgba(0,0,0,0.08);
-	transition: background 0.2s, color 0.2s;
+	transition: background 0.3s, color 0.3s, box-shadow 0.3s;
 	color: #61dafb;
 }
+
 .contactField:hover {
 	background: #61dafb;
 	color: #181c22;
+	box-shadow: 0 4px 16px #61dafb44;
+	transform: scale(1.04);
 }
 
 .contactLabel {

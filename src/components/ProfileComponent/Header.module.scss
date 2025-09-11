@@ -1,11 +1,15 @@
-
 .header {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
   padding: 1.5rem 2rem;
   background: #20232a;
   color: #fff;
   box-shadow: 0 2px 12px rgba(0,0,0,0.08);
   border-radius: 0 0 16px 16px;
   font-family: 'Segoe UI', 'Roboto', Arial, sans-serif;
+  transition: box-shadow 0.4s, background 0.4s;
 }
 
 .header h1 {
@@ -17,7 +21,10 @@
 
 .nav {
   display: flex;
-  gap: 1.5rem;
+  gap: 2rem;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
   margin-top: 0.5rem;
 }
 .nav a {
@@ -27,9 +34,11 @@
   font-weight: 500;
   padding: 0.4rem 1rem;
   border-radius: 6px;
-  transition: background 0.2s, color 0.2s;
+  transition: background 0.3s, color 0.3s, box-shadow 0.3s;
 }
 .nav a:hover {
   background: #20232a;
   color: #fff;
+  box-shadow: 0 4px 16px #61dafb44;
+  transform: translateY(-2px) scale(1.05);
 }

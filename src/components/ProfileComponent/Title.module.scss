@@ -16,4 +16,10 @@
   max-width: 600px;
   margin-left: auto;
   margin-right: auto;
+  transition: box-shadow 0.4s, background 0.4s, color 0.3s;
+}
+.title:hover {
+  box-shadow: 0 12px 40px #61dafb33;
+  color: #21a1f1;
+  transform: scale(1.03);
 }
