@@ -1,38 +1,44 @@
- .profileContainer {
-  background: linear-gradient(135deg, #1e2127 0%, #505764 100%);
-  border-radius: 20px;
+.profileContainer {
+  background: linear-gradient(135deg, #181c22 0%, #232a36 100%);
+  border-radius: 24px;
+  box-shadow: 0 8px 32px rgba(0,0,0,0.18);
+  color: #61dafb;
+  backdrop-filter: blur(8px);
+  border: 1px solid rgba(97,218,251,0.12);
   padding: 2.7rem 2.2rem;
-  box-shadow: 0 6px 32px rgba(0,0,0,0.12);
   max-width: 440px;
   margin: 2.7rem auto;
   font-family: 'Segoe UI', 'Roboto', Arial, sans-serif;
   transition: box-shadow 0.2s;
-  color: #111;
 }
 .profileTitle {
-  color: #2563eb;
+  color: #61dafb;
   font-size: 2.3rem;
   font-weight: 700;
   margin-bottom: 1.7rem;
   letter-spacing: 0.7px;
+  text-shadow: 0 2px 8px rgba(97,218,251,0.15);
 }
 .profileField {
   margin-bottom: 1.2rem;
   font-size: 1.15rem;
   display: flex;
   align-items: center;
-  background: rgba(255,255,255,0.85);
-  border-radius: 10px;
+  background: rgba(40,44,52,0.7);
+  border-radius: 12px;
   padding: 0.8rem 1.2rem;
-  box-shadow: 0 2px 8px rgba(0,0,0,0.06);
+  box-shadow: 0 1px 4px rgba(0,0,0,0.08);
   transition: background 0.2s, box-shadow 0.2s;
+  color: #61dafb;
 }
 .profileField:hover {
-  background: #e3eafc;
-  box-shadow: 0 4px 16px rgba(37,99,235,0.08);
+  background: #61dafb;
+  color: #181c22;
+  box-shadow: 0 4px 16px rgba(97,218,251,0.12);
 }
 .profileLabel {
   font-weight: 700;
   margin-right: 0.8rem;
-  color: #2563eb;
+  color: #61dafb;
+  text-shadow: 0 2px 8px rgba(97,218,251,0.15);
 }

@@ -1,11 +1,12 @@
 .homePage {
   min-height: 100vh;
   width: 100vw;
-  background: linear-gradient(135deg, #1e2127 0%, #505764 100%);
+    background: linear-gradient(135deg, #181c22 0%, #232a36 100%);
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
+    font-family: 'Segoe UI', 'Roboto', Arial, sans-serif;
 }
 .homeHeader {
   background: rgba(40,44,52,0.95);
@@ -16,12 +17,31 @@
   width: 100%;
   max-width: 600px;
   margin: 2rem auto;
-  text-align: center;
+    background: rgba(40,44,52,0.85);
+    border-radius: 24px;
+    color: #61dafb;
+    box-shadow: 0 8px 32px rgba(0,0,0,0.18);
+    backdrop-filter: blur(8px);
+    border: 1px solid rgba(97,218,251,0.12);
+    text-align: center;
+    font-size: 1.2rem;
 }
 .homeLogo {
-  height: 40vmin;
+  height: 32vmin;
   pointer-events: none;
 }
 .homeLink {
   color: #61dafb;
+  font-weight: 600;
+  text-decoration: none;
+  padding: 0.4rem 1rem;
+  border-radius: 8px;
+  background: rgba(40,44,52,0.7);
+  transition: background 0.2s, color 0.2s;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+  font-size: 1.1rem;
+}
+.homeLink:hover {
+  background: #61dafb;
+  color: #181c22;
 }
