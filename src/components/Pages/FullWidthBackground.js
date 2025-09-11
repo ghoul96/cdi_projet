@@ -1,8 +1,8 @@
 import React from "react";
-import "./FullWidthBackground.css";
+import styles from "./FullWidthBackground.module.scss";
 
 const FullWidthBackground = ({ children }) => (
-  <div className="full-width-bg">
+  <div className={styles.fullWidthBg}>
     {children}
   </div>
 );

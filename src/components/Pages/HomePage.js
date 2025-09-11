@@ -1,10 +1,12 @@
 import React from "react";
 import styles from "./HomePage.module.scss";
-import Header from "./Header";
+import Title from "../ProfileComponent/Title";
+import Header from "../ProfileComponent/Header";
 import logo from "../../logo.svg";
 
 const HomePage = () => (
   <div className={styles.homePage}>
+    <Title text="Home" />
     <Header />
     <header className={styles.homeHeader}>
       <img src={logo} className={styles.homeLogo} alt="logo" />

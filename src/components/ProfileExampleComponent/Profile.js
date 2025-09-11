@@ -2,7 +2,7 @@ import React from "react";
 import Header from "./Header";
 import Hero from "./Hero";
 import Footer from "./Footer";
-import FullWidthBackground from "./FullWidthBackground";
+import FullWidthBackground from "../Pages/FullWidthBackground";
 import styles from "./Profile.module.scss";
 
 function Profile() {

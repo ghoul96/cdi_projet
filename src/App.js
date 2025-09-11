@@ -5,9 +5,9 @@ import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import "./App.css";
 
 // Import your Profile component
-import Profile from "./components/ProfileComponent/Profile";
-import Contact from "./components/ProfileComponent/Contact";
-import HomePage from "./components/ProfileComponent/HomePage";
+import Profile from "./components/Pages/Profile";
+import Contact from "./components/Pages/Contact";
+import HomePage from "./components/Pages/HomePage";
 
 function App() {
   return (

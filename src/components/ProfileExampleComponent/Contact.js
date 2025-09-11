@@ -1,6 +1,6 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import FullWidthBackground from "./FullWidthBackground";
+import FullWidthBackground from "../Pages/FullWidthBackground";
 import styles from "./Contact.module.scss";
 
 function Contact() {

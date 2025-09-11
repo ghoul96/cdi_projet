@@ -2,10 +2,9 @@ import React from "react";
 import styles from "./Header.module.scss";
 import { Link } from "react-router-dom";
 
-function Header() {
+export default function Header() {
   return (
-    <header className={styles.header}>
-      <h1>My Profile</h1>
+    <header className="header">
       <nav className={styles.nav}>
         <Link to="/">Home</Link>
         <Link to="/profile">Profile</Link>
@@ -14,5 +13,3 @@ function Header() {
     </header>
   );
 }
-
-export default Header;
