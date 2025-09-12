@@ -6,7 +6,7 @@ import logo from "./logo.svg";
 import "./App.css";
 
 // Import your Profile component
-import Profile from "./components/ProfileExampleComponent/Profile";
+import UserVault from "./Vault/UserVault";
 
 function App() {
   return (
@@ -32,16 +32,17 @@ function App() {
                 </a>
 
                 {/* ✅ New Button under Learn React */}
-                <Link to="/profile">
-                  <button className="App-button">Go to Profile</button>
+                <Link to="/UserVault">
+                  <button className="App-button">Go to user_Vault</button>
                 </Link>
+                
               </header>
             </div>
           }
         />
 
         {/* Profile Page */}
-        <Route path="/profile" element={<Profile />} />
+        <Route path="/UserVault" element={<UserVault/>} />
       </Routes>
     </Router>
   );
