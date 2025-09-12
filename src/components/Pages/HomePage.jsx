@@ -1,8 +1,9 @@
 import React from "react";
 import styles from "./HomePage.module.scss";
-import Title from "../ProfileComponent/Title";
-import Header from "../ProfileComponent/Header";
+import Title from "../ProfileComponent/Title.jsx";
+import Header from "../ProfileComponent/Header.jsx";
 import logo from "../../logo.svg";
+import Footer from "../ProfileComponent/Footer.jsx";
 
 const HomePage = () => (
   <div className={styles.homePage}>
@@ -22,6 +23,7 @@ const HomePage = () => (
         Learn React
       </a>
     </header>
+    <Footer />
   </div>
 );
 

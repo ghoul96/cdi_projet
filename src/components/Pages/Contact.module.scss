@@ -9,7 +9,13 @@
 	max-width: 400px;
 	margin: 2rem auto;
 	font-family: 'Segoe UI', 'Roboto', Arial, sans-serif;
-	transition: box-shadow 0.5s, background 0.5s;
+	transition: box-shadow 0.4s, background 0.4s, color 0.4s;
+	animation: fadeInContact 1.2s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+@keyframes fadeInContact {
+	from { opacity: 0.6; transform: translateY(16px); }
+	to { opacity: 1; transform: translateY(0); }
 }
 
 .contactCard:hover {
@@ -35,7 +41,7 @@
 	padding: 0.6rem 1rem;
 	box-shadow: 0 1px 4px rgba(0,0,0,0.08);
 	transition: background 0.3s, color 0.3s, box-shadow 0.3s;
-	color: #61dafb;
+	color: #ffffff;
 }
 
 .contactField:hover {
@@ -48,5 +54,5 @@
 .contactLabel {
 	font-weight: 600;
 	margin-right: 0.7rem;
-	color: #61dafb;
+	color: #2da7f8;
 }

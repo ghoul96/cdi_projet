@@ -4,9 +4,15 @@
   left: 0;
   width: 100vw;
   height: 100vh;
-  background: #1d2026;
+  background: linear-gradient(135deg, #181c22 0%, #232a36 100%);
   margin: 0;
   padding: 0;
   z-index: -1;
-  transition: background 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+  transition: background 0.6s cubic-bezier(0.4, 0, 0.2, 1), box-shadow 0.4s;
+  animation: fadeInBg 1.2s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+@keyframes fadeInBg {
+  from { opacity: 0.6; }
+  to { opacity: 1; }
 }

@@ -1,15 +1,22 @@
 .homePage {
   min-height: 100vh;
   width: 100vw;
+  box-sizing: border-box;
+  overflow-x: hidden;
     background: linear-gradient(135deg, #181c22 0%, #232a36 100%);
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: flex-start;
     font-family: 'Segoe UI', 'Roboto', Arial, sans-serif;
-  transition: background 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+  transition: background 0.6s cubic-bezier(0.4, 0, 0.2, 1), box-shadow 0.4s, color 0.4s;
+  animation: fadeIn 1.2s cubic-bezier(0.4, 0, 0.2, 1);
   margin: 0;
   padding: 0;
+}
+@keyframes fadeIn {
+  from { opacity: 0.6; transform: translateY(16px); }
+  to { opacity: 1; transform: translateY(0); }
 }
 .homeHeader {
   background: rgba(40,44,52,0.95);
@@ -22,21 +29,28 @@
   margin: 2rem auto;
     background: rgba(40,44,52,0.85);
     border-radius: 24px;
-    color: #61dafb;
+    color: #2da7f8;
     box-shadow: 0 8px 32px rgba(0,0,0,0.18);
     backdrop-filter: blur(8px);
     border: 1px solid rgba(97,218,251,0.12);
     text-align: center;
     font-size: 1.2rem;
-  transition: box-shadow 0.4s, background 0.4s;
+  transition: box-shadow 0.4s, background 0.4s, color 0.4s;
+  animation: glassPop 1.2s cubic-bezier(0.4, 0, 0.2, 1);
+}
+@keyframes glassPop {
+  from { opacity: 0; transform: scale(0.95); }
+  to { opacity: 1; transform: scale(1); }
 }
 .homeLogo {
   height: 32vmin;
   pointer-events: none;
   transition: transform 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+  animation: logoSpin 1.5s cubic-bezier(0.4, 0, 0.2, 1);
 }
-.homeLogo:hover {
-  transform: scale(1.08) rotate(-8deg);
+@keyframes logoSpin {
+  from { opacity: 0; transform: scale(0.8) rotate(-30deg); }
+  to { opacity: 1; transform: scale(1) rotate(0deg); }
 }
 .homeLink {
   color: #61dafb;

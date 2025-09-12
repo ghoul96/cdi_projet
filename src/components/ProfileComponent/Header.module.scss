@@ -4,12 +4,13 @@
   align-items: center;
   width: 100%;
   padding: 1.5rem 2rem;
-  background: #20232a;
+  background: rgba(40,44,52,0.85);
   color: #fff;
   box-shadow: 0 2px 12px rgba(0,0,0,0.08);
   border-radius: 0 0 16px 16px;
   font-family: 'Segoe UI', 'Roboto', Arial, sans-serif;
-  transition: box-shadow 0.4s, background 0.4s;
+  transition: box-shadow 0.4s, background 0.4s, color 0.4s;
+  animation: fadeInHeader 1.2s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .header h1 {
@@ -42,3 +43,4 @@
   box-shadow: 0 4px 16px #61dafb44;
   transform: translateY(-2px) scale(1.05);
 }
+
