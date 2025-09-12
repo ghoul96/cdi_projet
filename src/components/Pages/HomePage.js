@@ -11,7 +11,7 @@ const HomePage = () => (
     <header className={styles.homeHeader}>
       <img src={logo} className={styles.homeLogo} alt="logo" />
       <p>
-        Edit <code>src/App.js</code> and save to reload.
+        Grizz's React App
       </p>
       <a
         className={styles.homeLink}
