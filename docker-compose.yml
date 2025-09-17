@@ -1,0 +1,79 @@
+version: '3.8'
+
+services:
+  # React Frontend Application
+  frontend:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    ports:
+      - "3000:80"
+    volumes:
+      # Mount SQLite database file to persist data
+      - ./data:/app/data
+    environment:
+      - NODE_ENV=production
+      - REACT_APP_API_URL=http://localhost:8000
+    depends_on:
+      - db-init
+      - backend
+    networks:
+      - app-network
+
+  # Python Backend API
+  backend:
+    build:
+      context: ./backend
+      dockerfile: Dockerfile
+    ports:
+      - "8000:8000"
+    volumes:
+      # Share SQLite database with frontend
+      - ./data:/app/data
+    environment:
+      - DATABASE_PATH=/app/data/app.db
+      - SECRET_KEY=your-secret-key-change-this-in-production
+    depends_on:
+      - db-init
+    networks:
+      - app-network
+
+  # SQLite Database Initialization Service
+  db-init:
+    image: alpine:latest
+    volumes:
+      - ./data:/data
+      - ./database:/database
+    command: >
+      sh -c "
+        apk add --no-cache sqlite &&
+        if [ ! -f /data/app.db ]; then
+          echo 'Initializing SQLite database...' &&
+          sqlite3 /data/app.db < /database/init.sql &&
+          echo 'Database initialized successfully!'
+        else
+          echo 'Database already exists, skipping initialization.'
+        fi
+      "
+    networks:
+      - app-network
+
+  # SQLite Admin Interface (optional - for database management)
+  sqlite-web:
+    image: coleifer/sqlite-web
+    ports:
+      - "8080:8080"
+    volumes:
+      - ./data:/data
+    command: sqlite_web -H 0.0.0.0 -x /data/app.db
+    depends_on:
+      - db-init
+    networks:
+      - app-network
+
+volumes:
+  sqlite-data:
+
+networks:
+  app-network:
+    driver: bridge

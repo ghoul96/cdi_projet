@@ -38,6 +38,11 @@ Dockerfile
 docker-compose.yml
 .dockerignore
 
+# Database files (let docker-compose handle them)
+data/
+*.db
+*.sqlite
+*.sqlite3
 
 # Logs
 logs
