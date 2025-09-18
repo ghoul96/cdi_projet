@@ -5,7 +5,7 @@ from fastapi import APIRouter, HTTPException, Depends
 from pydantic import BaseModel
 from typing import List
 from ..models.database import DatabaseManager, CommentModel
-from ..main import verify_token
+from ..utils.auth import verify_token
 
 router = APIRouter(prefix="/comments", tags=["comments"])
 

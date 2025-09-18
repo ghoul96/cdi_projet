@@ -8,6 +8,91 @@ from datetime import datetime
 class DatabaseManager:
     def __init__(self, db_path: str = "/app/data/app.db"):
         self.db_path = db_path
+        self.init_database()
+    
+    def init_database(self):
+        """Initialize database with required tables"""
+        init_sql = """
+        CREATE TABLE IF NOT EXISTS users (
+            id INTEGER PRIMARY KEY AUTOINCREMENT,
+            name VARCHAR(100) NOT NULL,
+            email VARCHAR(150) UNIQUE NOT NULL,
+            password VARCHAR(255) NOT NULL,
+            profile_image VARCHAR(255),
+            bio TEXT,
+            created_at DATETIME DEFAULT CURRENT_TIMESTAMP,
+            updated_at DATETIME DEFAULT CURRENT_TIMESTAMP
+        );
+
+        CREATE TABLE IF NOT EXISTS posts (
+            id INTEGER PRIMARY KEY AUTOINCREMENT,
+            user_id INTEGER NOT NULL,
+            title VARCHAR(200) NOT NULL,
+            content TEXT NOT NULL,
+            image_url VARCHAR(255),
+            created_at DATETIME DEFAULT CURRENT_TIMESTAMP,
+            updated_at DATETIME DEFAULT CURRENT_TIMESTAMP,
+            FOREIGN KEY (user_id) REFERENCES users(id) ON DELETE CASCADE
+        );
+
+        CREATE TABLE IF NOT EXISTS comments (
+            id INTEGER PRIMARY KEY AUTOINCREMENT,
+            post_id INTEGER NOT NULL,
+            user_id INTEGER NOT NULL,
+            content TEXT NOT NULL,
+            created_at DATETIME DEFAULT CURRENT_TIMESTAMP,
+            FOREIGN KEY (post_id) REFERENCES posts(id) ON DELETE CASCADE,
+            FOREIGN KEY (user_id) REFERENCES users(id) ON DELETE CASCADE
+        );
+
+        CREATE TABLE IF NOT EXISTS categories (
+            id INTEGER PRIMARY KEY AUTOINCREMENT,
+            name VARCHAR(100) NOT NULL UNIQUE,
+            description TEXT,
+            created_at DATETIME DEFAULT CURRENT_TIMESTAMP
+        );
+
+        CREATE TABLE IF NOT EXISTS post_categories (
+            post_id INTEGER NOT NULL,
+            category_id INTEGER NOT NULL,
+            PRIMARY KEY (post_id, category_id),
+            FOREIGN KEY (post_id) REFERENCES posts(id) ON DELETE CASCADE,
+            FOREIGN KEY (category_id) REFERENCES categories(id) ON DELETE CASCADE
+        );
+
+        CREATE INDEX IF NOT EXISTS idx_users_email ON users(email);
+        CREATE INDEX IF NOT EXISTS idx_posts_user_id ON posts(user_id);
+        CREATE INDEX IF NOT EXISTS idx_posts_created_at ON posts(created_at);
+        CREATE INDEX IF NOT EXISTS idx_comments_post_id ON comments(post_id);
+        CREATE INDEX IF NOT EXISTS idx_comments_user_id ON comments(user_id);
+
+        CREATE TRIGGER IF NOT EXISTS update_users_timestamp 
+            AFTER UPDATE ON users
+        BEGIN
+            UPDATE users SET updated_at = CURRENT_TIMESTAMP WHERE id = NEW.id;
+        END;
+
+        CREATE TRIGGER IF NOT EXISTS update_posts_timestamp 
+            AFTER UPDATE ON posts
+        BEGIN
+            UPDATE posts SET updated_at = CURRENT_TIMESTAMP WHERE id = NEW.id;
+        END;
+        """
+        
+        conn = self.get_connection()
+        try:
+            # Execute each statement separately to avoid issues
+            statements = init_sql.strip().split(';')
+            for statement in statements:
+                statement = statement.strip()
+                if statement:
+                    conn.execute(statement)
+            conn.commit()
+            print("Database initialized successfully!")
+        except Exception as e:
+            print(f"Error initializing database: {e}")
+        finally:
+            conn.close()
     
     def get_connection(self):
         """Get database connection with row factory"""

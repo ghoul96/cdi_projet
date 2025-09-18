@@ -1,3 +1,159 @@
+/* App Layout */
+.app {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+/* Header Styles */
+.app-header {
+  background-color: #282c34;
+  padding: 0;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+.app-nav {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem 2rem;
+}
+
+.nav-brand h1 {
+  color: #61dafb;
+  margin: 0;
+  font-size: 1.5rem;
+}
+
+.nav-links {
+  display: flex;
+  gap: 2rem;
+}
+
+.nav-links a {
+  color: white;
+  text-decoration: none;
+  font-weight: 500;
+  transition: color 0.2s;
+}
+
+.nav-links a:hover {
+  color: #61dafb;
+}
+
+.nav-auth {
+  min-width: 200px;
+  display: flex;
+  justify-content: flex-end;
+}
+
+/* Main Content */
+.app-main {
+  flex: 1;
+  padding: 2rem;
+  max-width: 1200px;
+  margin: 0 auto;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+/* Auth Required Page */
+.auth-required-page {
+  text-align: center;
+  padding: 4rem 2rem;
+}
+
+.auth-required-page h2 {
+  color: #333;
+  margin-bottom: 1rem;
+}
+
+.auth-required-page p {
+  color: #666;
+  margin-bottom: 2rem;
+}
+
+.auth-btn {
+  background-color: #4285f4;
+  color: white;
+  border: none;
+  padding: 12px 24px;
+  border-radius: 6px;
+  font-size: 16px;
+  cursor: pointer;
+  transition: background-color 0.2s;
+}
+
+.auth-btn:hover {
+  background-color: #3367d6;
+}
+
+/* Auth Buttons (for logged out state) */
+.auth-buttons .login-btn {
+  background-color: #4285f4;
+  color: white;
+  border: none;
+  padding: 8px 16px;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 14px;
+  transition: background-color 0.2s;
+}
+
+.auth-buttons .login-btn:hover {
+  background-color: #3367d6;
+}
+
+/* Loading Spinner */
+.loading-spinner {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 200px;
+}
+
+.loading-spinner div {
+  color: #666;
+  font-size: 18px;
+}
+
+/* Auth Required Message */
+.auth-required {
+  text-align: center;
+  padding: 2rem;
+  color: #666;
+}
+
+.auth-required h3 {
+  color: #333;
+  margin-bottom: 1rem;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .app-nav {
+    flex-direction: column;
+    gap: 1rem;
+    padding: 1rem;
+  }
+  
+  .nav-links {
+    gap: 1rem;
+  }
+  
+  .nav-auth {
+    min-width: auto;
+    justify-content: center;
+  }
+  
+  .app-main {
+    padding: 1rem;
+  }
+}
+
+/* Original App styles (keeping for compatibility) */
 .App {
   text-align: center;
 }
